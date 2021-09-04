@@ -1,0 +1,141 @@
+\documentclass[12pt]{report}
+
+\input{include/Preamble}
+
+\doublespacing
+
+% Remove \bfseries from chapter titles in ToC
+\renewcommand{\cftchapfont}{}
+
+% Remove \bfseries from section titles' page in ToC
+\renewcommand{\cftchappagefont}{}
+
+\begin{document}
+
+% This ensures that text 'mostly' doesn't extand past the right hand margin
+\emergencystretch 3em
+
+\begin{titlepage}
+
+\vspace*{8ex}
+
+\begin{center}
+[TITLE:]
+
+\vspace{2ex}
+
+[SUBTITLE]
+
+\vspace{4ex}
+
+by
+
+\vspace{4ex}
+
+[Your Full Name]
+
+\vspace{8ex}
+
+A Dissertation Presented to the \\
+FACULTY OF THE USC GRADUATE SCHOOL \\
+UNIVERSITY OF SOUTHERN CALIFORNIA \\
+In Partial Fulfillment of the \\
+Requirement for the Degree \\
+DOCTOR OF PHILOSOPHY \\
+(MAJOR or DEGREE PROGRAM NAME)
+
+\vspace{8ex}
+
+[December or May or August] [Year]
+
+\end{center}
+
+\vfill
+
+Copyright [Year] \hfill [Your Full Name]
+
+% Force a page break
+\clearpage
+
+\end{titlepage}
+
+\newpage
+\chapter*{}
+\addcontentsline{toc}{chapter}{Dedication}%
+\stepcounter{page}
+\vspace*{6cm}
+
+\begin{center}
+  \emph{Dedicated to ...}
+\end{center}
+
+\newpage
+\bgroup
+\titleformat{\chapter}{}{}{0pt}{\normalfont\Large\bfseries}
+\titlespacing*{\chapter}{0pt}{0pt}{20pt}
+\chapter*{Acknowledgments}
+\egroup
+\addcontentsline{toc}{chapter}{Acknowledgement}%
+
+\begin{onehalfspace}
+
+I would like to acknowledge ...
+
+\end{onehalfspace}
+
+\newpage
+
+\begin{singlespace}
+\tableofcontents
+\end{singlespace}
+\newpage
+
+\listoftables
+\newpage
+
+\listoffigures
+\newpage
+
+\input{include/Nomenclature}
+\renewcommand{\nomname}{Nomenclature}
+\begin{singlespace}
+\printnomenclature[3cm] % Increase 3cm if more space is needed
+\end{singlespace}
+
+\newpage
+\bgroup
+\titleformat{\chapter}{}{}{0pt}{\normalfont\Large\bfseries}
+\titlespacing*{\chapter}{0pt}{0pt}{20pt}
+\chapter*{Abstract}
+\egroup
+\addcontentsline{toc}{chapter}{Abstract}%
+
+\begin{onehalfspace}
+
+\noindent % Force no line-indent for the abstract
+\blindtext
+
+\end{onehalfspace}
+
+% This changes "before" spacing back to its default of 50pt
+\titlespacing*{\chapter}{0pt}{50pt}{40pt}
+
+\chapter{Introduction} \label{c:intro}
+\pagenumbering{arabic}  % Switch page numbering back to Arabic
+    \input{include/Introduction}
+
+\chapter{Background} \label{c:background}
+    \input{include/Background}
+
+\chapter{Methodology} \label{c:method}
+    \input{include/Methodology}
+
+\chapter{Results} \label{c:res}
+    \input{include/Results}
+
+\chapter{Conclusion} \label{c:conclusion}
+    \input{include/Conclusion}
+
+\bibliography{Bibliography}
+
+\end{document}

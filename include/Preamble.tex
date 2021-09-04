@@ -1,0 +1,92 @@
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{xcolor}
+\usepackage[intoc]{nomencl}
+\makenomenclature
+\usepackage[authoryear, round]{natbib}
+\bibliographystyle{plainnat}
+\usepackage{parskip}
+\usepackage[english]{babel}
+\usepackage[useregional]{datetime2}
+\DTMlangsetup[en-US]{showdayofmonth=false}
+\usepackage[doublespacing]{setspace}
+\usepackage{tocloft}
+\usepackage{blindtext}  % For generating lorum ipsum text
+\usepackage{colortbl}
+\usepackage{longtable}
+\usepackage{tablefootnote}
+\usepackage{tabularx, multirow, multicol, makecell}
+\usepackage[nottoc, numbib, numindex]{tocbibind}
+\usepackage{adjustbox}
+\usepackage{titlesec}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+
+% Set margins
+\usepackage[left=1in, right=1in, top=1in, bottom=0.5in, includefoot, headheight=13.6pt]{geometry}
+
+% Cross-reference hyperlinks
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    linkcolor={blue!50!black},
+    citecolor={blue!50!black},
+    urlcolor={blue!50!black}
+}
+
+% This prints the bibliography as an unnumbered chapter title
+\makeatletter
+\renewenvironment{thebibliography}[1]
+     {\chapter*{\bibname}% <-- this line was changed from \chapter* to \section*
+      \@mkboth{\MakeUppercase\bibname}{\MakeUppercase\bibname}%
+      \list{\@biblabel{\@arabic\c@enumiv}}%
+           {\settowidth\labelwidth{\@biblabel{#1}}%
+            \leftmargin\labelwidth
+            \advance\leftmargin\labelsep
+            \@openbib@code
+            \usecounter{enumiv}%
+            \let\p@enumiv\@empty
+            \renewcommand\theenumiv{\@arabic\c@enumiv}}%
+      \sloppy
+      \clubpenalty4000
+      \@clubpenalty \clubpenalty
+      \widowpenalty4000%
+      \sfcode`\.\@m}
+     {\def\@noitemerr
+       {\@latex@warning{Empty `thebibliography' environment}}%
+      \endlist}
+\makeatother
+
+% This ensures that only the first paragraph is indented
+\setlength{\parindent}{2em}
+
+% This ensures that there is no vertical space between paragraphs
+\setlength{\parskip}{0pt}
+
+% centered column with specified width
+\newcolumntype{x}[1]{>{\centering\arraybackslash\hspace{0pt}}p{#1}}
+
+% centered column with calculated width
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
+
+% vertically center tabularx tables
+\renewcommand\tabularxcolumn[1]{m{#1}}
+
+% This creates the nomenclature groups; Order of groups are alphabetical based on group symbol
+\usepackage{etoolbox}
+\renewcommand\nomgroup[1]{%
+  \item[\bfseries
+  \ifstrequal{#1}{A}{Acronyms}{%
+  \ifstrequal{#1}{B}{Symbols}{%
+  \ifstrequal{#1}{C}{Subscripts}{%
+  \ifstrequal{#1}{D}{Superscript}{}}}}%
+]}
+
+% Set Roman page numbering for front matter
+\pagenumbering{roman}
+
+\usepackage{placeins}
+
+% Completely prevent breaking of footnotes
+\interfootnotelinepenalty=10000
+
