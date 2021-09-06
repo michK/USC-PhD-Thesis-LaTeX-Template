@@ -5,7 +5,7 @@
 \usepackage{xcolor}
 \usepackage[intoc]{nomencl}
 \makenomenclature
-\usepackage{biblatex}
+\usepackage[backend=biber]{biblatex}
 \addbibresource{Bibliography.bib}
 \usepackage{parskip}
 \usepackage[useregional]{datetime2}
@@ -33,29 +33,6 @@
     citecolor={blue!50!black},
     urlcolor={blue!50!black}
 }
-
-% This prints the bibliography as an unnumbered chapter title
-\makeatletter
-\renewenvironment{thebibliography}[1]
-     {\chapter*{\bibname}% <-- this line was changed from \chapter* to \section*
-      \@mkboth{\MakeUppercase\bibname}{\MakeUppercase\bibname}%
-      \list{\@biblabel{\@arabic\c@enumiv}}%
-           {\settowidth\labelwidth{\@biblabel{#1}}%
-            \leftmargin\labelwidth
-            \advance\leftmargin\labelsep
-            \@openbib@code
-            \usecounter{enumiv}%
-            \let\p@enumiv\@empty
-            \renewcommand\theenumiv{\@arabic\c@enumiv}}%
-      \sloppy
-      \clubpenalty4000
-      \@clubpenalty \clubpenalty
-      \widowpenalty4000%
-      \sfcode`\.\@m}
-     {\def\@noitemerr
-       {\@latex@warning{Empty `thebibliography' environment}}%
-      \endlist}
-\makeatother
 
 % This ensures that only the first paragraph is indented
 \setlength{\parindent}{2em}
