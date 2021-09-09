@@ -1,5 +1,5 @@
 \usepackage[utf8]{inputenc}
-\usepackage[english]{babel}
+\usepackage{babel}
 \usepackage{graphicx}
 \usepackage{subcaption}
 \usepackage{xcolor}
@@ -24,15 +24,6 @@
 
 % Set margins
 \usepackage[left=1in, right=1in, top=1in, bottom=0.5in, includefoot, headheight=13.6pt]{geometry}
-
-% Cross-reference hyperlinks
-\usepackage{hyperref}
-\hypersetup{
-    colorlinks,
-    linkcolor={blue!50!black},
-    citecolor={blue!50!black},
-    urlcolor={blue!50!black}
-}
 
 % This ensures that only the first paragraph is indented
 \setlength{\parindent}{2em}
@@ -66,4 +57,14 @@
 
 % Completely prevent breaking of footnotes
 \interfootnotelinepenalty=10000
+
+% It is reccomended to load hyperref last
+\usepackage{hyperref}
+% Cross-reference hyperlinks
+\hypersetup{
+    colorlinks,
+    linkcolor={blue!50!black},
+    citecolor={blue!50!black},
+    urlcolor={blue!50!black}
+}
 

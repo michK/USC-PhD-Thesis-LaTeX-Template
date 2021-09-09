@@ -1,4 +1,4 @@
-\documentclass[12pt]{report}
+\documentclass[12pt,english]{report}
 
 \input{include/Preamble}
 
@@ -137,5 +137,9 @@ I would like to acknowledge ...
     \input{include/Conclusion}
 
 \printbibliography[heading=bibintoc]
+
+\appendix
+\chapter{Some supplemental important thing} \label{c:conclusion}
+    \input{include/Conclusion}
 
 \end{document}
