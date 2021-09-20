@@ -12,7 +12,7 @@ For intermediate testing, `pdflatex USC-PhD.tex` will be a bit faster, but if yo
 
 It is possible that the nomenclature will not appear initially, and if that is the case run
 
-`makeindex <filename>.nlo -s nomencl.ist -o <filename>.nls`
+`makeindex USC-PhD.nlo -s nomencl.ist -o USC-PhD.nls`
 
 and try again.
 
