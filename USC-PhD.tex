@@ -36,6 +36,7 @@ by
 
 \vspace{8ex}
 
+\begin{onehalfspace}
 A Dissertation Presented to the \\
 FACULTY OF THE USC GRADUATE SCHOOL \\
 UNIVERSITY OF SOUTHERN CALIFORNIA \\
@@ -43,6 +44,7 @@ In Partial Fulfillment of the \\
 Requirement for the Degree \\
 DOCTOR OF PHILOSOPHY \\
 (MAJOR or DEGREE PROGRAM NAME)
+\end{onehalfspace}
 
 \vspace{8ex}
 
@@ -86,14 +88,23 @@ I would like to acknowledge ...
 \newpage
 
 \begin{singlespace}
+{
+\hypersetup{linkcolor=black}
 \tableofcontents
+}
 \end{singlespace}
 \newpage
 
+{
+\hypersetup{linkcolor=black}
 \listoftables
+}
 \newpage
 
+{
+\hypersetup{linkcolor=black}
 \listoffigures
+}
 \newpage
 
 \input{include/Nomenclature}
@@ -136,7 +147,10 @@ I would like to acknowledge ...
 \chapter{Conclusion} \label{c:conclusion}
     \input{include/Conclusion}
 
+\begin{onehalfspace}
+\setlength\bibitemsep{0.5\baselineskip}
 \printbibliography[heading=bibintoc]
+\end{onehalfspace}
 
 \appendix
 \chapter{Some supplemental important thing} \label{c:conclusion}
