@@ -10,6 +10,10 @@
 % Remove \bfseries from section titles' page in ToC
 \renewcommand{\cftchappagefont}{}
 
+% Fill section and chapter entries with dots in ToC
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}} % for sections
+\renewcommand{\cftchapleader}{\cftdotfill{\cftdotsep}} % for chapters
+
 \begin{document}
 
 % This ensures that text 'mostly' doesn't extand past the right hand margin
