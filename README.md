@@ -10,11 +10,9 @@ For best results building LaTeX documents, I suggest using [latexmk](https://www
 Using `latexmk` ensures that all required build sequences are run so that cross-referencing and bibliography entries are up to date.
 For intermediate testing, `pdflatex USC-PhD.tex` will be a bit faster, but if you find that some references are not updating, use `latexmk`.
 
-It is possible that the nomenclature will not appear initially, and if that is the case run
+To ensure that the nomencalture is rendered correctly, you will need to use `makeindex` every time nomenclature entries are added, changed or deleted, as follows:
 
 `makeindex USC-PhD.nlo -s nomencl.ist -o USC-PhD.nls`
-
-and try again.
 
 ### Pull requests and issue submissions are welcome.
 
